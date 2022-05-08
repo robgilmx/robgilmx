@@ -1,0 +1,29 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!--  Company-->
+  <ng-container matColumnDef="company">
+    <th mat-header-cell *matHeaderCellDef> Company </th>
+    <td mat-cell *matCellDef="let job"> {{job.company}} </td>
+  </ng-container>
+  <!--  Role-->
+  <ng-container matColumnDef="role">
+    <th mat-header-cell *matHeaderCellDef> Role </th>
+    <td mat-cell *matCellDef="let job"> {{job.role}} </td>
+  </ng-container>
+  <!--  StartDate-->
+  <ng-container matColumnDef="startDate">
+    <th mat-header-cell *matHeaderCellDef> StartDate </th>
+    <td mat-cell *matCellDef="let job"> {{job.startDate}} </td>
+  </ng-container>
+  <!--  EndDate-->
+  <ng-container matColumnDef="endDate">
+    <th mat-header-cell *matHeaderCellDef> EndDate </th>
+    <td mat-cell *matCellDef="let job"> {{job.endDate}} </td>
+  </ng-container>
+  <!--  Skills-->
+  <ng-container matColumnDef="skills">
+    <th mat-header-cell *matHeaderCellDef> Skills </th>
+    <td mat-cell *matCellDef="let job"> {{job.skills}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+</table>
