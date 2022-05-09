@@ -1,6 +1,5 @@
-
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<!--<div class="toolbar" role="banner">
   <img
     width="40"
     alt="Angular Logo"
@@ -20,8 +19,42 @@
         <path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/>
       </svg>
     </a>
-</div>
+</div>-->
 
-<div class="content" role="main">
-  <app-job></app-job>
+<div class="content mat-elevation-z4 page-break" role="main">
+  <div class="main_top">
+    <img class="prof_pic" alt="profile_picture" src="assets/img/IMG_20210513_221443crop.jpg" />
+    <h1>Roberto Gil</h1>
+    <h2>Software Engineer, Fullstack developer</h2>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="main_body">
+    <div class="descriptions page-break" >
+      <div class="about-me page-break">
+        <h1>About me</h1>
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et sint, voluptatem! Modi quia quidem quo recusandae
+        reiciendis. Ad architecto at ex impedit, iste nisi omnis possimus quas rem reprehenderit voluptate!</span>
+          <span>Consectetur consequatur consequuntur dolor eligendi, hic ipsam ipsum itaque laboriosam placeat possimus qui
+          quia repudiandae sunt tempora veniam? Beatae blanditiis corporis doloremque eius facere fugiat itaque nostrum porro
+          repudiandae sequi!</span>
+          <span>Assumenda ducimus maxime minima reiciendis tempora. Aliquid amet architecto at cumque cupiditate dicta dolores
+          et ex illum iure iusto laudantium molestias, mollitia odit quidem quo similique unde voluptate voluptatem,
+          voluptatibus!</span>
+        </p>
+        <mat-divider class="desc_div"></mat-divider>
+      </div>
+      <div class="page-break">
+        <h1>Education</h1>
+        <mat-card class="edu_card" *ngFor="let dummy of ' '.repeat(4).split(''), let x = index">
+          <h3>Some education</h3>
+          <mat-divider></mat-divider>
+          <br>
+          <p>2022 - 2024</p>
+          <p>Some small description</p>
+        </mat-card>
+      </div>
+
+    </div>
+    <app-jobs class="jobs"></app-jobs>
+  </div>
 </div>

@@ -4,10 +4,10 @@ import {Job} from "./job";
 import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
-  selector: 'app-job',
+  selector: 'app-jobs',
   templateUrl: './job.component.html',
   providers: [JobService],
-  styleUrls: ['./job.component.css']
+  styleUrls: ['./job.component.scss']
 })
 export class JobComponent implements OnInit {
   jobs: Job[] = [];
@@ -22,5 +22,5 @@ export class JobComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.jobs);
     })
   }
-  columnsToDisplay = ['company', 'role', 'startDate', 'endDate', 'skills'];
+  columnsToDisplay = ['company', 'role', 'skills', 'projects', 'startDate', 'endDate'];
 }

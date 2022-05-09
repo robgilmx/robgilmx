@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from "@angular/material/slider";
 import { JobComponent } from './job/job.component';
 import { MatTableModule } from "@angular/material/table";
+import {MatListModule} from "@angular/material/list";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MatTableModule } from "@angular/material/table";
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatTableModule
+    MatTableModule,
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,142 @@
+// Breakpoints
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 85.375em; // 1366px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
+
+// Media Queries
+$mq-small: "(min-width: #{$bp-small})";
+$mq-medium: "(min-width: #{$bp-medium})";
+$mq-large: "(min-width: #{$bp-large})";
+$mq-xlarge: "(min-width: #{$bp-xlarge})";
+$mq-xxlarge: "(min-width: #{$bp-xxlarge})";
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+// Font-Size
+$base-font-size: 1em;
+
+// Line-Height
+$base-line-height: 1.5;
+$header-line-height: 1.25;
+
+body {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+
+  @media #{$mq-medium} {
+    font-size: $base-font-size*1.2;
+    line-height: $base-line-height*1.2;
+  }
+
+  @media #{$mq-large} {
+    font-size: $base-font-size*1.3;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: $base-font-size*1.4;
+  }
+
+  @media #{$mq-xxlarge} {
+    font-size: $base-font-size*1.6;
+  }
+}
+
+.content {
+  overflow: auto;
+  bottom: 0;
+  margin: 0 2%;
+  display: flex;
+  flex-flow: column;
+
+  @media #{$mq-medium} {
+    margin: 0 8%;
+  }
+
+  @media #{$mq-large} {
+    margin: 0 12%;
+  }
+
+  @media #{$mq-xlarge} {
+    margin: 0 18%;
+  }
+  @media #{$mq-xxlarge} {
+    margin: 0 24%;
+  }
+}
+
+.main_top {
+  margin: 2em auto;
+  text-align: center;
+  width: 60%;
+}
+
+.main_top h1 {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.prof_pic {
+  display: block;
+  margin: 2em auto;
+  height: auto;
+  width: 100%;
+  max-width: 20em;
+  border-radius: 20%;
+}
+
+.main_body {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+
+  @media #{$mq-small} {
+    //padding: 3em 3em;
+    flex-direction: row;
+    align-content: normal;
+    flex-wrap: nowrap;
+  }
+}
+
+
+.descriptions {
+
+  padding: 3em 1.5em;
+
+  @media #{$mq-small} {
+    width: 40%;
+    padding: 3em 3em;
+  }
+  color: aliceblue;
+  max-width: 100%;
+  background-color: #2e2b64;
+  flex-direction: column;
+
+}
+
+.body_spacer {
+  width: 1em;
+}
+
+.main_body > .jobs {
+  //padding: 0.5em 3em;
+}
+
+.desc_div {
+  border-top-color: aliceblue;
+  margin: 3em 0;
+}
+
+.edu_card {
+  padding: 1em;
+  margin: 3em 0;
+}
+
+@media print {
+  .page-break {
+    clear: both;
+    page-break-after: always;
+  }
+}

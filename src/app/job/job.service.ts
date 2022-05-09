@@ -22,7 +22,8 @@ export class JobService {
           role: jobFields[1],
           startDate: new Date(jobFields[2]),
           endDate: new Date(jobFields[3]),
-          skills: jobFields[4].split(",")
+          skills: jobFields[4].split(","),
+          projects: Number(jobFields[5])
         }
         jobs.push(job);
       }

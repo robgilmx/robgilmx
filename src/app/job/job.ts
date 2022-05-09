@@ -3,5 +3,6 @@ export interface Job {
   role: string,
   startDate: Date
   endDate: Date
-  skills: string[]
+  skills: string[],
+  projects: number
 }
