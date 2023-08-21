@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {JobService} from "./job.service";
 import {Job} from "./job";
 import {MatTableDataSource} from "@angular/material/table";
+import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-jobs',
@@ -16,10 +17,19 @@ export class JobComponent implements OnInit {
   constructor(private jobService: JobService) {
   }
 
+
+  private processJobs(jobsFile: string){
+    this.jobs = this.jobService.getJobs(jobsFile)
+    this.dataSource = new MatTableDataSource(this.jobs);
+  }
+
   ngOnInit(): void {
-    this.jobService.readJobsCsv().subscribe(jobsFile => {
-      this.jobs = this.jobService.getJobs(jobsFile)
-      this.dataSource = new MatTableDataSource(this.jobs);
+    this.jobService.readJobsCsv(this.jobService.jobsUrl).subscribe(jobsFile => {
+      this.processJobs(jobsFile);
+    }, error => {
+      this.jobService.readJobsCsv(this.jobService.fallbackUrl).subscribe(jobs => {
+        this.processJobs(jobs);
+      })
     })
   }
   columnsToDisplay = ['company', 'role', 'skills', 'projects', 'startDate', 'endDate'];

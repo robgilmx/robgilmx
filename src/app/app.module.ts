@@ -9,11 +9,13 @@ import { JobComponent } from './job/job.component';
 import { MatTableModule } from "@angular/material/table";
 import {MatListModule} from "@angular/material/list";
 import {MatCardModule} from "@angular/material/card";
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    JobComponent
+    JobComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
