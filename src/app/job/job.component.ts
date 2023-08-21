@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {JobService} from "./job.service";
 import {Job} from "./job";
 import {MatTableDataSource} from "@angular/material/table";
-import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-jobs',

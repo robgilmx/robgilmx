@@ -106,5 +106,8 @@
       }
     }
   },
-  "defaultProject": "robgilmx"
+  "defaultProject": "robgilmx",
+  "cli": {
+    "analytics": "2b5363e5-36fb-43b3-9fb2-f85744929fc4"
+  }
 }
