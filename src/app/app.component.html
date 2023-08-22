@@ -23,30 +23,17 @@
 
 <div class="content mat-elevation-z4 page-break" role="main">
   <div class="main_top">
-    <img class="prof_pic" alt="profile_picture" src="assets/img/IMG_20210513_221443crop.jpg" />
+    <img class="prof_pic" alt="profile_picture" src="assets/img/pp.jpg" />
     <h1>Roberto Gil</h1>
     <h2>Software Engineer, Fullstack developer</h2>
   </div>
   <mat-divider></mat-divider>
   <div class="main_body">
-    <div class="descriptions page-break" >
-      <div class="about-me page-break">
-        <h1>About me</h1>
-        <p>My name is Rob, I’m a Br. Software Engineer from Yucatan, Mexico. I am currently working as a Full stack
-          developer for a small consulting company. My expertise is focused on Java, Android and Javascript.
-          In my free time I enjoy playing musical instruments, composing simple musical beats, 3D modeling and mostly gaming.
-        </p>
-        <p>
-          I really like doing this job, coding and problem solving always give me a great feeling of accomplishment and
-          always have wanted to be part of renowned global scale products.I can adapt to learn new frameworks and even
-          languages to solve a requirement nonetheless I feel that Low code solutions are being used beyond their limits
-          in enterprise and highly prefer to avoid working with them.
-        </p>
-        <mat-divider class="desc_div"></mat-divider>
-      </div>
+    <div class="desc_div descriptions page-break" >
+      <app-about class=" page-break"></app-about>
       <div class="page-break">
         <h1>Education</h1>
-        <mat-card class="edu_card" *ngFor="let dummy of ' '.repeat(4).split(''), let x = index">
+        <mat-card class="edu-card" *ngFor="let dummy of ' '.repeat(4).split(''), let x = index">
           <h3>Some education</h3>
           <mat-divider></mat-divider>
           <br>

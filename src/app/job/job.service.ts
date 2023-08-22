@@ -6,8 +6,7 @@ import {Job} from "./job";
   providedIn: 'root'
 })
 export class JobService {
-  public jobsUrl = 'assets/realData/files/jobs.csv';
-  public fallbackUrl = 'assets/files/jobs.csv';
+  private jobsUrl = 'assets/files/jobs.csv';
 
   constructor(private http: HttpClient) { }
 
@@ -32,8 +31,8 @@ export class JobService {
     return jobs;
   }
 
-  readJobsCsv(url: string) {
-    return this.http.get(url, {responseType: 'text'});
+  readJobsCsv() {
+    return this.http.get(this.jobsUrl, {responseType: 'text'});
   }
 
 

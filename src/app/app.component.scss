@@ -44,7 +44,7 @@ body {
 .content {
   overflow: auto;
   bottom: 0;
-  margin: 0 2%;
+  margin: 0 0;
   display: flex;
   flex-flow: column;
 
@@ -120,16 +120,13 @@ body {
   width: 1em;
 }
 
-.main_body > .jobs {
-  //padding: 0.5em 3em;
-}
-
-.desc_div {
+.desc-div {
   border-top-color: aliceblue;
   margin: 3em 0;
 }
 
-.edu_card {
+.edu-card {
+  color: #000;
   padding: 1em;
   margin: 3em 0;
 }

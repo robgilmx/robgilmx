@@ -18,17 +18,13 @@ export class JobComponent implements OnInit {
 
 
   private processJobs(jobsFile: string){
-    this.jobs = this.jobService.getJobs(jobsFile)
+    this.jobs = this.jobService.getJobs(jobsFile);
     this.dataSource = new MatTableDataSource(this.jobs);
   }
 
   ngOnInit(): void {
-    this.jobService.readJobsCsv(this.jobService.jobsUrl).subscribe(jobsFile => {
+    this.jobService.readJobsCsv().subscribe(jobsFile => {
       this.processJobs(jobsFile);
-    }, error => {
-      this.jobService.readJobsCsv(this.jobService.fallbackUrl).subscribe(jobs => {
-        this.processJobs(jobs);
-      })
     })
   }
   columnsToDisplay = ['company', 'role', 'skills', 'projects', 'startDate', 'endDate'];

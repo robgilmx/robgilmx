@@ -22,10 +22,6 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
             "styles": [
               "src/custom-theme.scss",
               "src/styles.scss"
@@ -52,7 +48,16 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "assets": [
+                "src/favicon.ico",
+                {
+                  "glob": "**/*",
+                  "input": "src/assets/",
+                  "output": "/assets/",
+                  "ignore": ["src/realData/"]
+                }
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -60,7 +65,16 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "assets": [
+                "src/favicon.ico",
+                {
+                  "glob": "**/*",
+                  "input": "src/realData/",
+                  "output": "/assets/",
+                  "ignore": ["src/assets/"]
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -106,7 +120,6 @@
       }
     }
   },
-  "defaultProject": "robgilmx",
   "cli": {
     "analytics": "2b5363e5-36fb-43b3-9fb2-f85744929fc4"
   }
