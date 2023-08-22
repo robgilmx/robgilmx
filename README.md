@@ -2,7 +2,7 @@
 - 👀 I’m interested in High Profile projects, start ups, Videogames and Content creation.
 - 🌱 I’m currently learning Angular and front to get a good level
 - 💞️ I’m looking to collaborate on Android tools.
-- 📫 How to reach me at robgilmx@gmail.com
+- 📫 How to reach me at 1ku3bwg59@mozmail.com
 
 <!---
 robgilmx/robgilmx is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
