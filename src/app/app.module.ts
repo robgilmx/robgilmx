@@ -10,12 +10,15 @@ import { MatTableModule } from "@angular/material/table";
 import {MatListModule} from "@angular/material/list";
 import {MatCardModule} from "@angular/material/card";
 import { AboutComponent } from './about/about.component';
+import { EducationComponent } from './education/education.component';
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     JobComponent,
-    AboutComponent
+    AboutComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { AboutComponent } from './about/about.component';
     MatSliderModule,
     MatTableModule,
     MatListModule,
-    MatCardModule
+    MatCardModule, 
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

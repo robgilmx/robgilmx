@@ -1,0 +1,8 @@
+
+<h1>Education</h1>
+<mat-card class="edu-card" *ngFor="let edu of educations">
+    <h3>{{edu.level}}</h3>
+    <p>{{edu.school}} - {{edu.institution}}</p>
+    <mat-divider></mat-divider>
+    <p><i>{{edu.certification}}</i> {{edu.duration ? "("+edu.duration+")" : ""}}</p>
+  </mat-card>

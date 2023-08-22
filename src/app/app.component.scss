@@ -132,8 +132,16 @@ body {
 }
 
 @media print {
+  body {
+    overflow: visible
+}
+
   .page-break {
     clear: both;
     page-break-after: always;
+  }
+
+  .start-page-break{
+    page-break-before: always;
   }
 }

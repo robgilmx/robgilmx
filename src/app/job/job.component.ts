@@ -10,22 +10,30 @@ import {MatTableDataSource} from "@angular/material/table";
   styleUrls: ['./job.component.scss']
 })
 export class JobComponent implements OnInit {
-  jobs: Job[] = [];
+  public jobs: Job[] = [];
+  public allSkills: string[] = [];
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>([])
+  columnsToDisplay = ['company', 'role', 'projects','duration'];
 
   constructor(private jobService: JobService) {
   }
 
-
-  private processJobs(jobsFile: string){
-    this.jobs = this.jobService.getJobs(jobsFile);
-    this.dataSource = new MatTableDataSource(this.jobs);
-  }
 
   ngOnInit(): void {
     this.jobService.readJobsCsv().subscribe(jobsFile => {
       this.processJobs(jobsFile);
     })
   }
-  columnsToDisplay = ['company', 'role', 'skills', 'projects', 'startDate', 'endDate'];
+
+  private processJobs(jobsFile: string){
+    this.jobs = this.jobService.getJobs(jobsFile);
+    this.dataSource = new MatTableDataSource(this.jobs);
+    this.jobs.forEach(job => {
+      job.skills.forEach(skill => {
+        !this.allSkills.includes(skill) ? this.allSkills.push(skill): void 0;
+      })
+    })
+    this.allSkills.sort((a, b) => a.localeCompare(b))
+  }
+
 }

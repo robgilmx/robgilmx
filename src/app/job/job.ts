@@ -4,5 +4,6 @@ export interface Job {
   startDate: Date
   endDate: Date
   skills: string[],
-  projects: number
+  projects: number,
+  webpage: string,
 }
