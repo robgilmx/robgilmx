@@ -22,6 +22,8 @@ export class EducationService {
           level: eduRow[2],
           duration: eduRow[3],
           certification: eduRow[4],
+          imageUrl: eduRow[5],
+          important: "true"===eduRow[6].trim()
         }
         educations.push(education);
       }

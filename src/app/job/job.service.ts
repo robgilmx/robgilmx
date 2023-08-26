@@ -10,7 +10,7 @@ export class JobService {
 
   constructor(private http: HttpClient) { }
 
-  getJobs(jobsFileContent: string): Job[] {
+  public getJobs(jobsFileContent: string): Job[] {
     const jobs: Job[] = [];
     const jobList = jobsFileContent?.split("\n");
     jobList?.shift();
@@ -21,7 +21,7 @@ export class JobService {
           company: jobFields[0],
           role: jobFields[1],
           startDate: new Date(jobFields[2]),
-          endDate: new Date(jobFields[3]),
+          endDate: !!jobFields[3] ? new Date(jobFields[3]) : new Date(),
           skills: jobFields[4].split(","),
           projects: Number(jobFields[5]),
           webpage: jobFields[6]
@@ -32,9 +32,27 @@ export class JobService {
     return jobs;
   }
 
-  readJobsCsv() {
+  public readJobsCsv() {
     return this.http.get(this.jobsUrl, {responseType: 'text'});
   }
 
+  public getLatestJob(jobs: Job[]):Job{
+    let latestJob = jobs[0];
+    for (let i = 1; i < jobs.length; i++){
+      if (jobs[i].endDate > latestJob.endDate){
+          latestJob = jobs[i];
+      }
+    }
+    return latestJob;
+  }
 
+  public getFirstJob(jobs: Job[]):Job{
+    let firstJob = jobs[0];
+    for (let i = 1; i < jobs.length; i++){
+      if (jobs[i].startDate < firstJob.startDate){
+        firstJob = jobs[i];
+      }
+    }
+    return firstJob;
+  }
 }

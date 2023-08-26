@@ -1,8 +1,10 @@
 
 <h1>Education</h1>
-<mat-card class="edu-card" *ngFor="let edu of educations">
-    <h3>{{edu.level}}</h3>
-    <p>{{edu.school}} - {{edu.institution}}</p>
-    <mat-divider></mat-divider>
-    <p><i>{{edu.certification}}</i> {{edu.duration ? "("+edu.duration+")" : ""}}</p>
-  </mat-card>
+<div class="education">
+  <div *ngFor="let edu of educations">
+    <div *ngIf="!!edu.important">
+      <h3>{{edu.certification}}</h3>
+      <p>{{edu.institution}}</p>
+    </div>
+  </div>
+</div>

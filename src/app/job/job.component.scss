@@ -1,26 +1,46 @@
-table {
-    padding: 0.5em 1em;
+
+.current-experience {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-around;
+  flex-direction: row;
+  text-align: center;
+  align-items: stretch;
 }
 
-h1 {
-    padding: 1em;
+.cur-xp-col {
+  padding: 2rem;
 }
 
+.experience-row {
+    width: 100%;
+    text-align: center;
+    
+}
 
-mat-card {
-    padding: 1em;
+.skill-list-container {
+  padding: 2rem;
+
 }
 
 td {
     padding-top: 1em;
     padding-bottom: 1em;
 }
-
 @media print {
     body {
-        overflow: visible
+      overflow: visible
+  }
+  
+    .page-break {
+      clear: both;
+      page-break-after: always;
     }
+  
     .start-page-break{
-        page-break-before: always;
-      }
-}
+      page-break-before: always;
+    }
+  }
+
+  

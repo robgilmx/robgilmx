@@ -1,37 +1,26 @@
-<div class="start-page-break">
+<div>
 <h1>Professional Experience</h1>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z4 table">
-  <!--  Company-->
-  <ng-container class="small-column" matColumnDef="company" >
-    <th mat-header-cell *matHeaderCellDef> Company </th>
-    <td mat-cell *matCellDef="let job"> {{job.company}} <!-- <br> <a [href]="job.webpage">{{job.webpage}}</a> --> </td>
-  </ng-container>
-  <!--  Role-->
-  <ng-container class="small-column" matColumnDef="role">
-    <th mat-header-cell *matHeaderCellDef> Role </th>
-    <td mat-cell *matCellDef="let job"> {{job.role}} </td>
-  </ng-container>
-  <!--  Projects -->
-  <ng-container class="small-column" matColumnDef="projects">
-    <th mat-header-cell *matHeaderCellDef> Projects Worked </th>
-    <td mat-cell *matCellDef="let job">{{job.projects}} Projects </td>
-  </ng-container>
-  <!--  Duration -->
-  <ng-container class="small-column" matColumnDef="duration">
-    <th mat-header-cell *matHeaderCellDef> Duration </th>
-    <td mat-cell *matCellDef="let job"> From <span ng-bind="date | date:'MM/dd/yyyy'">{{job.startDate}}</span> to {{job.endDate}} </td>
-  </ng-container>
- 
-  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-  <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
-</table>
-<h1>Skills</h1> 
+<div class="current-experience">
+  <div class="cur-xp-row">  
+    <div class="cur-xp-col"><h3>Current Company:</h3><span>{{this.latestJob.company}}</span></div>
+    <div class="cur-xp-col"><h3>Time of experience: </h3><span>{{this.yearsOfXP}} years</span></div>
+  </div>
+  <div class="cur-xp-row">  
+    <div class="cur-xp-col"><h3>Current Role:</h3><span>{{this.latestJob.role}}</span></div>
+    <div class="cur-xp-col"><h3>Projects: </h3><span>{{this.totalProjects}} projects</span></div>
+  </div>  
+</div>
 
-    <mat-grid-list class="skill-list" cols="4" rowHeight="4em" >
-      <mat-grid-tile colspan="1"  *ngFor="let skill of allSkills"> 
-        <mat-card>
-        {{skill}} 
-      </mat-card>
-    </mat-grid-tile>
-    </mat-grid-list>
+<div>&nbsp;</div>
+<h1>Relevant Knowledge</h1> 
+
+    <div class="skill-list-container">
+      <mat-grid-list class="skill-list" cols="3" rowHeight="5em" ro>
+        <mat-grid-tile colspan="1" class="mat-grid-tile"  *ngFor="let skill of relevantSkills"> 
+         <div class="card-container"> 
+          <mat-card><mat-card-content>{{skill.name}}</mat-card-content></mat-card>
+        </div>
+      </mat-grid-tile>
+      </mat-grid-list>
+    </div>
 </div>
