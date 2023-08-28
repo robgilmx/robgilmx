@@ -12,12 +12,13 @@ import { MatCardModule } from "@angular/material/card";
 import { AboutComponent } from './about/about.component';
 import { EducationComponent } from './education/education.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { AboutDetailsComponent } from './about/details/details.component';
+import { AboutDetailsComponent } from './about/details/about-details.component';
 import { SkillDetailsComponent } from './job/skill-details/skill-details.component'; 
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { EducationDetailsComponent } from './education/details/details.component';
-import { JobDetailsComponent } from './job/details/details.component';
+import { EducationDetailsComponent } from './education/details/education-details.component';
+import { JobDetailsComponent } from './job/details/job-details.component';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { JobDetailsComponent } from './job/details/details.component';
     SkillDetailsComponent,
     EducationDetailsComponent,
     JobDetailsComponent,
-    DashboardComponent
+    DashboardComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

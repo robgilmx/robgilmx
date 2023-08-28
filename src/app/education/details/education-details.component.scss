@@ -1,0 +1,24 @@
+.edu-pic{
+    height: 7em;
+    width: auto;
+    max-width: 100%;
+    border-radius: 80%;
+}
+
+.education-container {
+    padding: 3rem;
+}
+
+.education-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.education-item div{
+    padding: 0.2rem 1rem;
+    width: 20%;
+}

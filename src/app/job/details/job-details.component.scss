@@ -1,0 +1,59 @@
+@import '@angular/material/theming';
+
+.table {
+    @include mat-elevation(4);
+
+    @media print {
+        @include mat-elevation(0);
+    }
+}
+
+.job-skills-expander {
+    padding: 0.3rem 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: flex-end;
+}
+
+
+.job-pic{
+    height: 1.8em;
+    width: 1.8em;
+    border-radius: 50%;
+}
+
+.detailed-job-row {
+    display: flex;
+}
+
+.detailed-job-row div *{
+ padding: 0.5em 1em;
+}
+
+.detailed-job-company {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    width: 35%;
+    
+}
+
+.detailed-job-data {
+    display: flex;
+    justify-content: space-evenly;
+    width: 65%;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.detailed-job-data *{
+    max-width: 10vw;
+    padding: 0.2rem;
+    width: 33%;
+    text-align: center;
+}

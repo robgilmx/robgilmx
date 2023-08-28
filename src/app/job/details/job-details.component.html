@@ -1,0 +1,52 @@
+<div>
+  <app-details title="Experience"></app-details>
+<div class="jobs-container">
+  <div class="detailed-job" *ngFor="let job of jobs">
+    <div class="detailed-job-row">
+      <div class="detailed-job-company">
+        <a [href]="job.webpage" class="no-deco-anchor"><span><img class="pic-bg job-pic" [src]="getJobImage(job)"></span></a>
+        <a [href]="job.webpage" class="no-deco-anchor"><span><h4>{{job.company}}</h4></span></a>
+        
+      </div>
+      
+      <div class="detailed-job-data">
+        <span>{{job.role}}</span>
+        <span>{{job.projects}} Projects</span>
+        <span>From {{getMonthYear(job.startDate)}} till {{getMonthYear(job.endDate)}}
+          ({{getDuration(job)}})
+        </span>
+      </div>
+      
+    </div>
+    <mat-divider/>
+    <div class="job-skills" >
+      <div class="job-skills-expander">
+        <a class="no-deco-anchor" routerLink="/jobs"   (click)="setSkillDetails(job)" >
+          <b><i>Tools utilized</i></b>&nbsp;
+          
+          <span class="material-icons" *ngIf="activeSkillDetails !== job.company">arrow_drop_down</span>
+          <span class="material-icons" *ngIf="activeSkillDetails === job.company">arrow_drop_up</span>
+        </a>
+      </div>
+      <app-skill-details *ngIf="activeSkillDetails === job.company" [job]="job"></app-skill-details>
+    </div>
+    <mat-divider/>
+  </div>
+
+
+
+</div>
+    <div class="continue-cards">
+      <a routerLink="/about" class="no-deco-anchor">
+        <mat-card>
+        <mat-card-header><h3>About me</h3></mat-card-header>
+        <mat-card-content>See the details about me, my life and interests</mat-card-content>
+        </mat-card>
+      </a>
+      <a routerLink="/education" class="no-deco-anchor">
+          <mat-card>
+          <mat-card-header><h3>Education</h3></mat-card-header>
+          <mat-card-content>See the details for education, courses and certifications</mat-card-content>
+          </mat-card>
+      </a>
+  </div>

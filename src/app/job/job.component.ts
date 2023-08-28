@@ -27,11 +27,11 @@ export class JobComponent implements OnInit {
     })
   }
 
-  private calculateXPYears() { // birthday is a date
-    const startDate: Date = this.jobService.getFirstJob(this.jobs).startDate;
-    const ageDifMs = this.latestJob.endDate.getTime() - startDate.getTime();
-    var ageDate = new Date(ageDifMs); // miliseconds from epoch
-    this.yearsOfXP = Math.abs(ageDate.getUTCFullYear() - 1970);
+  private calculateXPYears() { 
+    this.yearsOfXP = Math.abs(this.jobService.getDuration(
+       this.jobService.getFirstJob(this.jobs).startDate,
+       this.jobService.getLatestJob(this.jobs).endDate
+    ).getUTCFullYear() - 1970);
   }
 
   private getLatestJob(){

@@ -6,4 +6,5 @@ export interface Job {
   skills: string[],
   projects: number,
   webpage: string,
+  imageUrl?: string
 }

@@ -1,1 +1,15 @@
-<p>skill-details works!</p>
+<mat-divider></mat-divider>
+<div class="skill-details-container">
+        <span>Worked with <b>{{job?.skills?.length}} Skills or Tools</b>:</span>
+        
+        <div class="skill-list-container">
+        <mat-grid-list class="skill-list" cols="4" rowHeight="5em" >
+          <mat-grid-tile class="mat-grid-tile" colspan="1"  *ngFor="let skill of job?.skills"> 
+            <div class="card-container"> 
+              <mat-card><mat-card-content>{{skill}}</mat-card-content></mat-card>
+            </div>
+        </mat-grid-tile>
+        </mat-grid-list>
+        </div>
+        
+  </div>

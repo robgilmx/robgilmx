@@ -3,8 +3,8 @@ import { AboutService } from '../about.service';
 
 @Component({
   selector: 'app-about-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  templateUrl: './about-details.component.html',
+  styleUrls: ['./about-details.component.scss']
 })
 export class AboutDetailsComponent {
   private aboutContent = "<p>No Content</p>";

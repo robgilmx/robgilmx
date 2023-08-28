@@ -1,0 +1,23 @@
+
+<app-details title="About me"></app-details>
+<div class="about-me">
+    <div [innerHTML]="getAboutContent()">
+    
+    </div>
+    
+    
+</div>
+<div class="continue-cards">
+    <a routerLink="/jobs" class="no-deco-anchor">
+        <mat-card>
+        <mat-card-header><h3>Experience</h3></mat-card-header>
+        <mat-card-content>See the details for work history, projects and skills</mat-card-content>
+        </mat-card>
+    </a>
+    <a routerLink="/education" class="no-deco-anchor">
+        <mat-card>
+        <mat-card-header><h3>Education</h3></mat-card-header>
+        <mat-card-content>See the details for education, courses and certifications</mat-card-content>
+        </mat-card>
+    </a>
+</div>

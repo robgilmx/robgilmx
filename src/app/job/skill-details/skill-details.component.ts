@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Job } from '../job';
 
 @Component({
   selector: 'app-skill-details',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class SkillDetailsComponent {
 
+  
+  @Input()
+  public job: Job | undefined;
+
+  ngOnInit(): void {
+  }
 }

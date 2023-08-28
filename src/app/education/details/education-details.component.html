@@ -1,0 +1,31 @@
+<app-details title="Education"></app-details>
+<div class="education-container">
+ 
+  <div *ngFor="let edu of educations">
+    <div class="education-item">
+      <div><img class="edu-pic" [src]="getEducationImage(edu)"></div>
+      <div><h2>{{edu.school}}</h2></div>
+      <div>{{edu.certification}}</div>
+      <div>{{edu.institution}} - {{edu.level}}</div>
+      <div>{{edu.duration}}</div>
+    </div>
+    <mat-divider/>
+  </div>
+  
+
+</div>
+
+  <div class="continue-cards">
+    <a routerLink="/jobs" class="no-deco-anchor">
+        <mat-card>
+        <mat-card-header><h3>Experience</h3></mat-card-header>
+        <mat-card-content>See the details for work history, projects and skills</mat-card-content>
+        </mat-card>
+    </a>
+    <a routerLink="/education" class="no-deco-anchor">
+        <mat-card>
+        <mat-card-header><h3>Education</h3></mat-card-header>
+        <mat-card-content>See the details for education, courses and certifications</mat-card-content>
+        </mat-card>
+    </a>
+</div>

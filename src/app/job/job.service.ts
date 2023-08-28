@@ -24,7 +24,10 @@ export class JobService {
           endDate: !!jobFields[3] ? new Date(jobFields[3]) : new Date(),
           skills: jobFields[4].split(","),
           projects: Number(jobFields[5]),
-          webpage: jobFields[6]
+          webpage: jobFields[6],
+        }
+        if (jobFields.length > 7) {
+          job.imageUrl = jobFields[7];   
         }
         jobs.push(job);
       }
@@ -54,5 +57,14 @@ export class JobService {
       }
     }
     return firstJob;
+  }
+
+  public getJobDuration(job:Job): Date{
+    return this.getDuration(job.startDate, job.endDate);
+  }
+
+  public getDuration(startDate:Date, endDate:Date): Date{
+    const ageDifMs = endDate.getTime() - startDate.getTime();
+    return new Date(ageDifMs); // miliseconds from epoch
   }
 }

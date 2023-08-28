@@ -1,21 +1,22 @@
 <div>
-<h1>Professional Experience</h1>
+<a class="no-deco-anchor" routerLink="/jobs"><h1>Professional Experience</h1></a>
 <div class="current-experience">
   <div class="cur-xp-row">  
-    <div class="cur-xp-col"><h3>Current Company:</h3><span>{{this.latestJob.company}}</span></div>
+    <div class="cur-xp-col"><h3>Current Company:</h3><span>{{this.latestJob?.company}}</span></div>
     <div class="cur-xp-col"><h3>Time of experience: </h3><span>{{this.yearsOfXP}} years</span></div>
   </div>
   <div class="cur-xp-row">  
-    <div class="cur-xp-col"><h3>Current Role:</h3><span>{{this.latestJob.role}}</span></div>
+    <div class="cur-xp-col"><h3>Current Role:</h3><span>{{this.latestJob?.role}}</span></div>
     <div class="cur-xp-col"><h3>Projects: </h3><span>{{this.totalProjects}} projects</span></div>
   </div>  
 </div>
-
+<div class="page-break"></div>
 <div>&nbsp;</div>
-<h1>Relevant Knowledge</h1> 
+<a class="no-deco-anchor" routerLink="/jobs"><h1>Relevant Knowledge</h1></a>
+
 
     <div class="skill-list-container">
-      <mat-grid-list class="skill-list" cols="3" rowHeight="5em" ro>
+      <mat-grid-list class="skill-list" cols="3" rowHeight="5em">
         <mat-grid-tile colspan="1" class="mat-grid-tile"  *ngFor="let skill of relevantSkills"> 
          <div class="card-container"> 
           <mat-card><mat-card-content>{{skill.name}}</mat-card-content></mat-card>
